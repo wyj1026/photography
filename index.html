@@ -16,15 +16,26 @@ layout: default
     </header>
 
     <!-- Main -->
-    <div id="main">
+    <!-- <div id="main">
         {% for image in site.static_files %}
         {% if image.path contains 'fulls' %}
         <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
+    
+        </article>
+        {% endif %}
+        {% endfor %}
+    </div> -->
+    <div id="main">
+        {% for image in site.static_files %}
+        {% if image.path contains 'fulls' %}
+        <article class="thumb">
+            <a href="{{ site.imgae_url }}{{ image.name }}" class="image">
+                <img src="{{ site.imgae_url }}{{site.image_thumbs_prefix}}{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+    
         </article>
         {% endif %}
         {% endfor %}
